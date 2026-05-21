@@ -1,0 +1,2 @@
+source /home/toan/dev/workspaces/esp/esp32_KDI/build/bootloader/gdbinit/symbols
+source /home/toan/dev/workspaces/esp/esp32_KDI/build/bootloader/gdbinit/connect

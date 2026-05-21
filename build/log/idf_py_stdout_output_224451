@@ -1,0 +1,18 @@
+Command: ninja all
+[1/11] Performing build step for 'bootloader'
+[1/1] cd /home/toan/dev/workspaces/esp/esp32_KDI/build/bootloader/esp-idf/esptool_py && /home/toan/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/toan/dev/tools/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/toan/dev/workspaces/esp/esp32_KDI/build/bootloader/bootloader.bin
+Bootloader binary size 0x6630 bytes. 0x9d0 bytes (9%) free.
+[2/9] Building C object esp-idf/vl53l1x-st-api/CMakeFiles/__idf_vl53l1x-st-api.dir/vl53l1_platform.c.obj
+[3/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+[4/9] Linking C static library esp-idf/vl53l1x-st-api/libvl53l1x-st-api.a
+[5/9] Linking C static library esp-idf/main/libmain.a
+[6/9] Generating esp-idf/esp_system/ld/sections.ld
+[7/9] Linking CXX executable esp32_KDI.elf
+[8/9] Generating binary image from built executable
+esptool.py v4.12.dev1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/toan/dev/workspaces/esp/esp32_KDI/build/esp32_KDI.bin
+[9/9] cd /home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/esptool_py && /home/toan/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/toan/dev/tools/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/toan/dev/workspaces/esp/esp32_KDI/build/partition_table/partition-table.bin /home/toan/dev/workspaces/esp/esp32_KDI/build/esp32_KDI.bin
+esp32_KDI.bin binary size 0x2a3d0 bytes. Smallest app partition is 0x100000 bytes. 0xd5c30 bytes (84%) free.

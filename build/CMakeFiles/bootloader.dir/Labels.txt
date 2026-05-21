@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/toan/dev/workspaces/esp/esp32_KDI/build/CMakeFiles/bootloader
+/home/toan/dev/workspaces/esp/esp32_KDI/build/CMakeFiles/bootloader.rule
+/home/toan/dev/workspaces/esp/esp32_KDI/build/CMakeFiles/bootloader-complete.rule
+/home/toan/dev/workspaces/esp/esp32_KDI/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/toan/dev/workspaces/esp/esp32_KDI/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/toan/dev/workspaces/esp/esp32_KDI/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/toan/dev/workspaces/esp/esp32_KDI/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/toan/dev/workspaces/esp/esp32_KDI/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/toan/dev/workspaces/esp/esp32_KDI/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/toan/dev/workspaces/esp/esp32_KDI/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
