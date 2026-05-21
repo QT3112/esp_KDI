@@ -1,0 +1,302 @@
+Command: /home/toan/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/toan/dev/tools/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/toan/dev/workspaces/esp/esp32_KDI/build/esp32_KDI.elf /home/toan/dev/workspaces/esp/esp32_KDI/build/bootloader/bootloader.elf -m '/home/toan/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/toan/dev/tools/esp/esp-idf/tools/idf.py'
+[0;32mI (13) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (13) boot: compile time May 21 2026 16:01:36[0m
+[0;32mI (13) boot: Multicore bootloader[0m
+[0;32mI (14) boot: chip revision: v3.1[0m
+[0;32mI (16) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (20) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (24) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (27) boot: Enabling RNG early entropy source...[0m
+[0;32mI (32) boot: Partition Table:[0m
+[0;32mI (34) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (41) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (47) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (54) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (60) boot: End of partition table[0m
+[0;32mI (64) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=25f70h (155504) map[0m
+[0;32mI (124) esp_image: segment 1: paddr=00035f98 vaddr=3ffb0000 size=04790h ( 18320) load[0m
+[0;32mI (131) esp_image: segment 2: paddr=0003a730 vaddr=40080000 size=058e8h ( 22760) load[0m
+[0;32mI (140) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=989a4h (625060) map[0m
+[0;32mI (354) esp_image: segment 4: paddr=000d89cc vaddr=400858e8 size=15778h ( 87928) load[0m
+[0;32mI (389) esp_image: segment 5: paddr=000ee14c vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (402) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (402) boot: Disabling RNG early entropy source...[0m
+[0;32mI (412) cpu_start: Multicore app[0m
+[0;32mI (421) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (421) cpu_start: Pro cpu start user code[0m
+[0;32mI (421) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (423) app_init: Application information:[0m
+[0;32mI (427) app_init: Project name:     esp32_KDI[0m
+[0;32mI (431) app_init: App version:      429a8c2-dirty[0m
+[0;32mI (435) app_init: Compile time:     May 21 2026 17:14:26[0m
+[0;32mI (440) app_init: ELF file SHA256:  1049f3a68...[0m
+[0;32mI (445) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (448) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (452) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (456) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (460) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (466) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (471) heap_init: At 3FFB8DF8 len 00027208 (156 KiB): DRAM[0m
+[0;32mI (477) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (482) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (488) heap_init: At 4009B060 len 00004FA0 (19 KiB): IRAM[0m
+[0;32mI (494) spi_flash: detected chip: generic[0m
+[0;32mI (496) spi_flash: flash io: dio[0m
+[0;32mI (501) main_task: Started on CPU0[0m
+[0;32mI (511) main_task: Calling app_main()[0m
+[0;32mI (511) MAIN: === CF-Drone ESP-IDF ===[0m
+[0;32mI (511) MAIN: Initializing...[0m
+[0;32mI (601) MOTORS: Initializing motors...[0m
+[0;32mI (601) MOTORS:   Motor0 pin=GPIO12: OK[0m
+[0;32mI (601) MOTORS:   Motor1 pin=GPIO13: OK[0m
+[0;32mI (601) MOTORS:   Motor2 pin=GPIO15: OK[0m
+[0;32mI (601) MOTORS:   Motor3 pin=GPIO14: OK[0m
+[0;32mI (601) MOTORS: Motors initialized. PWM=25000Hz, bits=10[0m
+[0;32mI (611) BATTERY: Battery ADC initialized on channel 0[0m
+[0;32mI (631) IMU: WHO_AM_I = 0x70 (expected 0x71 or 0x70)[0m
+[0;32mI (741) IMU: MPU9250/6500 initialized. Gyro=±2000dps, Acc=±4g, Rate=1kHz[0m
+[0;32mI (741) RC_SBUS: SBUS initialized on UART1, GPIO4[0m
+[0;32mI (741) FC: Flight controller initialized[0m
+[0;32mI (751) wifi:wifi driver task: 3ffc1bd4, prio:23, stack:6656, core=0[0m
+[0;32mI (761) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (761) wifi:wifi certification version: v7.0[0m
+[0;32mI (761) wifi:config NVS flash: enabled[0m
+[0;32mI (761) wifi:config nano formatting: disabled[0m
+[0;32mI (761) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (771) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (771) wifi:Init management short buffer num: 32[0m
+[0;32mI (781) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (781) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (791) wifi:Init static rx buffer num: 10[0m
+[0;32mI (791) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (791) wifi_init: rx ba win: 6[0m
+[0;32mI (801) wifi_init: accept mbox: 6[0m
+[0;32mI (801) wifi_init: tcpip mbox: 32[0m
+[0;32mI (801) wifi_init: udp mbox: 6[0m
+[0;32mI (811) wifi_init: tcp mbox: 6[0m
+[0;32mI (811) wifi_init: tcp tx win: 5760[0m
+[0;32mI (811) wifi_init: tcp rx win: 5760[0m
+[0;32mI (811) wifi_init: tcp mss: 1440[0m
+[0;32mI (821) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (821) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1101) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (1191) wifi:mode : softAP (b0:cb:d8:0f:56:61)[0m
+[0;32mI (1191) wifi:Total power save buffer number: 16[0m
+[0;32mI (1191) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1191) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1201) WIFI_AP: wifi_ap_init finished. SSID:Saolatek_drone_wifi channel:1[0m
+[0;32mI (1201) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (1211) WEB_RC: Web RC Server started on port 80[0m
+[0;32mI (1211) MAIN: Initialization complete![0m
+[0;32mI (1221) MAIN: ARM: Throttle LOW + Yaw RIGHT[0m
+[0;32mI (1221) MAIN: DISARM: Throttle LOW + Yaw LEFT[0m
+[0;32mI (1231) MAIN: Drone task started on Core 0[0m
+[0;32mI (1231) MAIN: Aux task started on Core 1[0m
+[0;32mI (1231) main_task: Returned from app_main()[0m
+[0;32mI (1231) MAIN: Mode=ACRO   Armed=0 Rate=0Hz | Roll=0.0 Pitch=-0.0 Yaw=0.0 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (1751) MAIN: Mode=ACRO   Armed=0 Rate=28Hz | Roll=0.2 Pitch=0.1 Yaw=-1.6 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (2251) MAIN: Mode=ACRO   Armed=0 Rate=28Hz | Roll=0.4 Pitch=0.2 Yaw=-3.2 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (2801) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=0.7 Pitch=0.3 Yaw=-4.9 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (3301) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=0.9 Pitch=0.3 Yaw=-6.4 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (3801) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=1.1 Pitch=0.4 Yaw=-8.0 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (4301) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=1.3 Pitch=0.5 Yaw=-9.6 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (4801) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=1.5 Pitch=0.6 Yaw=-11.1 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (5301) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=1.7 Pitch=0.7 Yaw=-12.7 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (5851) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=1.9 Pitch=0.8 Yaw=-14.4 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (6351) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=2.1 Pitch=1.0 Yaw=-15.9 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (6851) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=2.2 Pitch=1.1 Yaw=-17.5 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (7351) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=2.4 Pitch=1.2 Yaw=-19.1 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (7901) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=2.6 Pitch=1.3 Yaw=-20.8 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (8401) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=2.8 Pitch=1.4 Yaw=-22.4 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (8951) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=2.9 Pitch=1.6 Yaw=-24.1 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (9451) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=3.1 Pitch=1.7 Yaw=-25.6 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (9951) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=3.2 Pitch=1.8 Yaw=-27.2 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (10451) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=3.4 Pitch=2.0 Yaw=-28.7 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (10951) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=3.5 Pitch=2.1 Yaw=-30.3 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (11451) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=3.7 Pitch=2.2 Yaw=-31.9 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (12001) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=3.8 Pitch=2.4 Yaw=-33.6 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (12501) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=3.9 Pitch=2.5 Yaw=-35.1 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (13001) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=4.0 Pitch=2.7 Yaw=-36.7 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (13501) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=4.1 Pitch=2.8 Yaw=-38.2 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (14051) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=4.2 Pitch=3.0 Yaw=-40.0 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (14551) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=4.3 Pitch=3.1 Yaw=-41.5 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (15051) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=4.3 Pitch=3.2 Yaw=-42.8 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (15551) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=4.1 Pitch=3.0 Yaw=-42.7 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (16101) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=3.7 Pitch=2.8 Yaw=-42.7 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (16601) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=3.4 Pitch=2.6 Yaw=-42.7 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (17101) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=3.1 Pitch=2.5 Yaw=-42.6 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (17601) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=2.8 Pitch=2.3 Yaw=-42.6 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (18101) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=2.6 Pitch=2.1 Yaw=-42.5 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (18651) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=2.2 Pitch=1.9 Yaw=-42.5 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (19151) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=2.0 Pitch=1.8 Yaw=-42.4 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (19651) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=1.7 Pitch=1.6 Yaw=-42.4 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (20151) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=1.4 Pitch=1.4 Yaw=-42.3 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (20701) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=1.1 Pitch=1.3 Yaw=-42.3 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (21201) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=0.8 Pitch=1.1 Yaw=-42.2 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (21751) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=0.5 Pitch=0.9 Yaw=-42.2 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (22251) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=0.3 Pitch=0.8 Yaw=-42.1 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (22801) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-0.0 Pitch=0.6 Yaw=-42.1 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (23301) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-0.3 Pitch=0.5 Yaw=-42.0 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (23801) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-0.6 Pitch=0.3 Yaw=-41.9 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (24301) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-0.8 Pitch=0.1 Yaw=-41.9 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (24801) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-1.1 Pitch=-0.0 Yaw=-41.8 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (25301) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-1.3 Pitch=-0.1 Yaw=-41.8 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (25801) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-1.6 Pitch=-0.3 Yaw=-41.7 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (26301) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-1.8 Pitch=-0.4 Yaw=-41.6 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (26801) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-2.1 Pitch=-0.6 Yaw=-41.6 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (27351) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-2.3 Pitch=-0.7 Yaw=-41.5 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (27851) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-2.6 Pitch=-0.9 Yaw=-41.4 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (28351) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-2.8 Pitch=-1.0 Yaw=-41.4 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (28851) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-3.0 Pitch=-1.1 Yaw=-41.3 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (29401) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-3.3 Pitch=-1.3 Yaw=-41.3 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (29901) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-3.5 Pitch=-1.4 Yaw=-41.2 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (30091) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (30091) wifi:station: ca:76:57:83:9d:ad join, AID=1, bgn, 20[0m
+[0;32mI (30191) WIFI_AP: station ca:76:57:83:9d:ad join, AID=1[0m
+[0;32mI (30251) wifi:<ba-add>idx:2 (ifx:1, ca:76:57:83:9d:ad), tid:0, ssn:0, winSize:64[0m
+[0;32mI (30291) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+[0;32mI (30401) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-3.8 Pitch=-1.6 Yaw=-41.2 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (30901) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-4.0 Pitch=-1.7 Yaw=-41.1 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (31451) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-4.2 Pitch=-1.8 Yaw=-41.1 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (31951) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-4.4 Pitch=-2.0 Yaw=-41.0 | Thrust=0.00 Batt=3.82V[0m
+[0;33mW (32221) httpd_txrx: httpd_sock_err: error in send : 104[0m
+[0;33mW (32231) httpd_txrx: httpd_sock_err: error in recv : 104[0m
+[0;32mI (32501) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-4.7 Pitch=-2.1 Yaw=-40.9 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (33001) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-4.9 Pitch=-2.2 Yaw=-40.9 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (33501) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-5.1 Pitch=-2.3 Yaw=-40.8 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (34001) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-5.3 Pitch=-2.5 Yaw=-40.7 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (34501) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-5.5 Pitch=-2.6 Yaw=-40.7 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (35001) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=-5.8 Pitch=-2.7 Yaw=-40.6 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (35551) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=-6.0 Pitch=-2.8 Yaw=-40.5 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (36051) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-6.2 Pitch=-2.9 Yaw=-40.5 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (36551) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-6.4 Pitch=-3.0 Yaw=-40.4 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (37051) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-6.6 Pitch=-3.1 Yaw=-40.3 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (37601) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-6.8 Pitch=-3.3 Yaw=-40.3 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (38101) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-7.0 Pitch=-3.4 Yaw=-40.2 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (38651) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-7.2 Pitch=-3.5 Yaw=-40.1 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (39151) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-7.4 Pitch=-3.6 Yaw=-40.1 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (39651) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-7.6 Pitch=-3.7 Yaw=-40.0 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (40151) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-7.8 Pitch=-3.8 Yaw=-39.9 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (40651) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=-8.0 Pitch=-3.9 Yaw=-39.9 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (41151) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=-8.2 Pitch=-4.0 Yaw=-39.8 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (41651) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-8.4 Pitch=-4.1 Yaw=-39.7 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (42201) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-8.6 Pitch=-4.2 Yaw=-39.7 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (42751) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-8.8 Pitch=-4.4 Yaw=-39.6 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (43251) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-9.0 Pitch=-4.4 Yaw=-39.5 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (43751) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-9.1 Pitch=-4.5 Yaw=-39.5 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (44301) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-9.3 Pitch=-4.6 Yaw=-39.4 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (44801) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=-9.5 Pitch=-4.7 Yaw=-39.3 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (45301) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=-9.7 Pitch=-4.8 Yaw=-39.2 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (45801) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-9.9 Pitch=-4.9 Yaw=-39.2 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (46351) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-10.0 Pitch=-5.0 Yaw=-39.1 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (46851) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-10.2 Pitch=-5.1 Yaw=-39.0 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (47351) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=-10.4 Pitch=-5.2 Yaw=-39.0 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (47851) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-10.6 Pitch=-5.2 Yaw=-38.9 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (48401) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-10.7 Pitch=-5.3 Yaw=-38.8 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (48901) MAIN: Mode=STAB   Armed=0 Rate=101Hz | Roll=-10.9 Pitch=-5.4 Yaw=-38.8 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (49401) MAIN: Mode=STAB   Armed=0 Rate=101Hz | Roll=-11.1 Pitch=-5.5 Yaw=-38.7 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (49901) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-11.2 Pitch=-5.6 Yaw=-38.6 | Thrust=0.00 Batt=3.82V[0m
+[0;33mW (50131) httpd_txrx: httpd_sock_err: error in send : 104[0m
+[0;33mW (50151) httpd_txrx: httpd_sock_err: error in recv : 104[0m
+[0;32mI (50401) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-11.4 Pitch=-5.7 Yaw=-38.6 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (50951) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-11.6 Pitch=-5.8 Yaw=-38.5 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (51451) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-11.7 Pitch=-5.9 Yaw=-38.4 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (51951) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-11.9 Pitch=-6.0 Yaw=-38.3 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (52501) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-12.1 Pitch=-6.0 Yaw=-38.2 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (53051) MAIN: Mode=STAB   Armed=0 Rate=101Hz | Roll=-12.2 Pitch=-6.1 Yaw=-38.2 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (53551) MAIN: Mode=STAB   Armed=0 Rate=101Hz | Roll=-12.4 Pitch=-6.2 Yaw=-38.1 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (54101) MAIN: Mode=STAB   Armed=0 Rate=101Hz | Roll=-12.5 Pitch=-6.3 Yaw=-38.0 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (54321) FC: ARMED via Web[0m
+[0;32mI (54601) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-12.7 Pitch=-6.3 Yaw=-38.0 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (55101) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-12.8 Pitch=-6.4 Yaw=-37.9 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (55601) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-13.0 Pitch=-6.5 Yaw=-37.8 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (56101) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-13.1 Pitch=-6.6 Yaw=-37.8 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (56601) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-13.3 Pitch=-6.7 Yaw=-37.7 | Thrust=0.00 Batt=3.82V[0m
+[0;32mI (57151) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-13.4 Pitch=-6.6 Yaw=-37.6 | Thrust=0.18 Batt=3.75V[0m
+[0;32mI (57651) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-13.5 Pitch=-6.7 Yaw=-37.5 | Thrust=0.18 Batt=3.75V[0m
+[0;32mI (58151) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-13.5 Pitch=-6.5 Yaw=-37.4 | Thrust=0.18 Batt=3.75V[0m
+[0;32mI (58701) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-13.8 Pitch=-6.7 Yaw=-36.5 | Thrust=0.18 Batt=3.79V[0m
+[0;32mI (59201) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-14.0 Pitch=-6.7 Yaw=-36.1 | Thrust=0.18 Batt=3.71V[0m
+[0;32mI (59751) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-14.3 Pitch=-6.7 Yaw=-35.8 | Thrust=0.18 Batt=3.76V[0m
+[0;32mI (60301) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-14.4 Pitch=-7.0 Yaw=-35.5 | Thrust=0.18 Batt=3.76V[0m
+[0;32mI (60801) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-14.4 Pitch=-7.2 Yaw=-35.4 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (61351) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-14.6 Pitch=-7.2 Yaw=-35.4 | Thrust=0.16 Batt=3.76V[0m
+[0;32mI (61901) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-14.8 Pitch=-7.3 Yaw=-35.5 | Thrust=0.22 Batt=3.76V[0m
+[0;32mI (62401) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-15.0 Pitch=-7.0 Yaw=-35.4 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (62901) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-15.0 Pitch=-7.0 Yaw=-35.1 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (63401) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-15.1 Pitch=-7.1 Yaw=-35.0 | Thrust=0.00 Batt=3.81V[0m
+[0;33mW (63761) FC: Low battery (3.40V): auto-disarmed[0m
+[0;32mI (63951) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-15.1 Pitch=-7.2 Yaw=-34.8 | Thrust=0.26 Batt=3.81V[0m
+[0;32mI (64451) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-15.2 Pitch=-7.2 Yaw=-34.7 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (65001) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-15.3 Pitch=-7.3 Yaw=-34.6 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (65551) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-15.4 Pitch=-7.3 Yaw=-34.6 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (66051) MAIN: Mode=STAB   Armed=0 Rate=101Hz | Roll=-15.5 Pitch=-7.4 Yaw=-34.5 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (66551) MAIN: Mode=STAB   Armed=0 Rate=101Hz | Roll=-15.6 Pitch=-7.5 Yaw=-34.4 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (67051) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-15.8 Pitch=-7.6 Yaw=-34.4 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (67601) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-15.9 Pitch=-7.6 Yaw=-34.3 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (68101) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-16.0 Pitch=-7.7 Yaw=-34.2 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (68601) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-16.1 Pitch=-7.7 Yaw=-34.2 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (69101) MAIN: Mode=STAB   Armed=0 Rate=101Hz | Roll=-16.2 Pitch=-7.8 Yaw=-34.1 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (69651) MAIN: Mode=STAB   Armed=0 Rate=101Hz | Roll=-16.3 Pitch=-7.8 Yaw=-34.0 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (70151) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-16.4 Pitch=-7.9 Yaw=-34.0 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (70671) FC: ARMED via Web[0m
+[0;32mI (70701) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-16.6 Pitch=-7.9 Yaw=-33.9 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (71201) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-16.7 Pitch=-8.0 Yaw=-33.8 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (71751) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-16.8 Pitch=-8.1 Yaw=-33.8 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (72251) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-16.9 Pitch=-8.1 Yaw=-33.7 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (72801) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-17.0 Pitch=-8.2 Yaw=-33.6 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (73301) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-17.1 Pitch=-8.2 Yaw=-33.5 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (73851) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-17.2 Pitch=-8.3 Yaw=-33.5 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (74351) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-17.4 Pitch=-8.4 Yaw=-33.3 | Thrust=0.00 Batt=3.81V[0m
+[0;32mI (74901) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-17.5 Pitch=-8.6 Yaw=-33.2 | Thrust=0.27 Batt=3.76V[0m
+[0;32mI (75451) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-17.6 Pitch=-8.5 Yaw=-33.2 | Thrust=0.29 Batt=3.75V[0m
+[0;32mI (75951) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-17.7 Pitch=-8.3 Yaw=-33.0 | Thrust=0.31 Batt=3.50V[0m
+[0;32mI (76451) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-17.9 Pitch=-8.5 Yaw=-32.8 | Thrust=0.62 Batt=3.71V[0m
+[0;32mI (76951) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-17.8 Pitch=-8.4 Yaw=-32.8 | Thrust=0.56 Batt=3.69V[0m
+[0;32mI (77501) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-17.9 Pitch=-8.4 Yaw=-32.6 | Thrust=0.45 Batt=3.72V[0m
+[0;32mI (78001) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-18.1 Pitch=-8.6 Yaw=-32.2 | Thrust=0.32 Batt=3.74V[0m
+[0;32mI (78551) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-18.3 Pitch=-8.7 Yaw=-32.1 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (79051) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-18.5 Pitch=-8.7 Yaw=-31.3 | Thrust=0.00 Batt=3.79V[0m
+[0;32mI (79551) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-18.7 Pitch=-8.6 Yaw=-30.8 | Thrust=0.19 Batt=3.71V[0m
+[0;32mI (80101) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-18.6 Pitch=-8.5 Yaw=-30.9 | Thrust=0.15 Batt=3.71V[0m
+[0;32mI (80601) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-18.7 Pitch=-8.5 Yaw=-30.8 | Thrust=0.00 Batt=3.72V[0m
+[0;32mI (81151) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-18.9 Pitch=-8.6 Yaw=-30.7 | Thrust=0.00 Batt=3.79V[0m
+[0;33mW (81411) FC: Low battery (3.29V): auto-disarmed[0m
+[0;32mI (81701) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-19.0 Pitch=-8.7 Yaw=-30.7 | Thrust=0.32 Batt=3.80V[0m
+[0;32mI (82201) MAIN: Mode=STAB   Armed=0 Rate=101Hz | Roll=-19.1 Pitch=-8.7 Yaw=-30.6 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (82751) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-19.2 Pitch=-8.8 Yaw=-30.5 | Thrust=0.47 Batt=3.80V[0m
+[0;32mI (83301) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-19.2 Pitch=-8.8 Yaw=-30.4 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (83801) MAIN: Mode=STAB   Armed=0 Rate=100Hz | Roll=-19.3 Pitch=-8.8 Yaw=-30.4 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (83881) FC: ARMED via Web[0m
+[0;32mI (84301) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-19.4 Pitch=-8.9 Yaw=-30.3 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (84801) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-19.5 Pitch=-8.9 Yaw=-30.2 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (85301) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-19.6 Pitch=-9.0 Yaw=-30.2 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (85801) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-19.7 Pitch=-9.0 Yaw=-30.0 | Thrust=0.39 Batt=3.69V[0m
+[0;32mI (86301) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-19.8 Pitch=-9.2 Yaw=-29.8 | Thrust=0.46 Batt=3.68V[0m
+[0;32mI (86851) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-19.6 Pitch=-8.9 Yaw=-29.8 | Thrust=0.46 Batt=3.70V[0m
+[0;32mI (87351) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-19.6 Pitch=-8.4 Yaw=-29.9 | Thrust=0.46 Batt=3.73V[0m
+[0;32mI (87901) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-19.6 Pitch=-8.5 Yaw=-29.8 | Thrust=0.46 Batt=3.73V[0m
+[0;32mI (88401) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-19.6 Pitch=-8.5 Yaw=-29.7 | Thrust=0.46 Batt=3.73V[0m
+[0;32mI (88951) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-19.4 Pitch=-8.2 Yaw=-29.7 | Thrust=0.46 Batt=3.68V[0m
+[0;32mI (89451) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-19.5 Pitch=-8.0 Yaw=-29.8 | Thrust=0.46 Batt=3.69V[0m
+[0;32mI (90001) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-19.3 Pitch=-7.6 Yaw=-29.8 | Thrust=0.00 Batt=3.78V[0m
+[0;32mI (90501) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-19.4 Pitch=-7.6 Yaw=-29.7 | Thrust=0.00 Batt=3.79V[0m
+[0;32mI (91001) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-19.4 Pitch=-7.7 Yaw=-29.6 | Thrust=0.00 Batt=3.79V[0m
+[0;32mI (91501) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-19.5 Pitch=-7.7 Yaw=-29.6 | Thrust=0.00 Batt=3.79V[0m
+[0;32mI (92051) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-19.6 Pitch=-7.8 Yaw=-29.5 | Thrust=0.00 Batt=3.79V[0m
+[0;32mI (92551) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-19.7 Pitch=-7.8 Yaw=-29.4 | Thrust=0.00 Batt=3.79V[0m
+[0;32mI (93101) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-19.8 Pitch=-7.9 Yaw=-29.3 | Thrust=0.00 Batt=3.79V[0m
+[0;32mI (93601) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-19.8 Pitch=-7.9 Yaw=-29.2 | Thrust=0.00 Batt=3.79V[0m
+[0;32mI (94101) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-19.9 Pitch=-8.0 Yaw=-29.2 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (94651) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-20.0 Pitch=-8.0 Yaw=-29.1 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (95201) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-20.1 Pitch=-8.1 Yaw=-29.0 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (95751) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-20.1 Pitch=-8.1 Yaw=-28.9 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (96251) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=-20.2 Pitch=-8.2 Yaw=-28.9 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (96801) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-20.3 Pitch=-8.2 Yaw=-28.8 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (97301) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-20.9 Pitch=-3.5 Yaw=-19.4 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (97801) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-20.9 Pitch=2.8 Yaw=-4.6 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (98351) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=-27.2 Pitch=7.2 Yaw=-6.5 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (98851) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=15.8 Pitch=-4.9 Yaw=-3.2 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (99351) MAIN: Mode=STAB   Armed=1 Rate=100Hz | Roll=20.7 Pitch=28.8 Yaw=13.0 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (99851) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=36.0 Pitch=23.8 Yaw=12.6 | Thrust=0.00 Batt=3.80V[0m
+[0;32mI (100401) MAIN: Mode=STAB   Armed=1 Rate=101Hz | Roll=46.5 Pitch=18.3 Yaw=9.2 | Thrust=0.00 Batt=3.80V[0m

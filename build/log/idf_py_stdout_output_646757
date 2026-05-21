@@ -1,0 +1,105 @@
+Command: /home/toan/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/toan/dev/tools/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/toan/dev/workspaces/esp/esp32_KDI/build/esp32_KDI.elf /home/toan/dev/workspaces/esp/esp32_KDI/build/bootloader/bootloader.elf -m '/home/toan/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/toan/dev/tools/esp/esp-idf/tools/idf.py'
+����Jj�I (13) boot: ESP-IDF v5.5.3 2nd stage bootloader
+[0;32mI (13) boot: compile time May 21 2026 16:01:36[0m
+[0;32mI (13) boot: Multicore bootloader[0m
+[0;32mI (14) boot: chip revision: v3.1[0m
+[0;32mI (16) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (20) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (24) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (27) boot: Enabling RNG early entropy source...[0m
+[0;32mI (32) boot: Partition Table:[0m
+[0;32mI (34) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (41) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (47) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (54) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (60) boot: End of partition table[0m
+[0;32mI (64) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0b470h ( 46192) map[0m
+[0;32mI (87) esp_image: segment 1: paddr=0001b498 vaddr=3ffb0000 size=02b1ch ( 11036) load[0m
+[0;32mI (91) esp_image: segment 2: paddr=0001dfbc vaddr=40080000 size=0205ch (  8284) load[0m
+[0;32mI (95) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=18a68h (100968) map[0m
+[0;32mI (132) esp_image: segment 4: paddr=00038a90 vaddr=4008205c size=0dfe8h ( 57320) load[0m
+[0;32mI (155) esp_image: segment 5: paddr=00046a80 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (163) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (163) boot: Disabling RNG early entropy source...[0m
+[0;32mI (175) cpu_start: Multicore app[0m
+[0;32mI (184) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (184) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (186) app_init: Application information:[0m
+[0;32mI (190) app_init: Project name:     esp32_KDI[0m
+[0;32mI (194) app_init: App version:      429a8c2-dirty[0m
+[0;32mI (198) app_init: Compile time:     May 21 2026 16:01:33[0m
+[0;32mI (203) app_init: ELF file SHA256:  b2a17d89c...[0m
+[0;32mI (207) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (211) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (215) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (219) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (223) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (229) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (234) heap_init: At 3FFB36C0 len 0002C940 (178 KiB): DRAM[0m
+[0;32mI (240) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (245) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (250) heap_init: At 40090044 len 0000FFBC (63 KiB): IRAM[0m
+[0;32mI (257) spi_flash: detected chip: generic[0m
+[0;32mI (259) spi_flash: flash io: dio[0m
+[0;32mI (263) main_task: Started on CPU0[0m
+[0;32mI (273) main_task: Calling app_main()[0m
+[0;32mI (273) MAIN: === CF-Drone ESP-IDF ===[0m
+[0;32mI (273) MAIN: Initializing...[0m
+[0;32mI (273) MOTORS: Initializing motors...[0m
+[0;32mI (273) MOTORS:   Motor0 pin=GPIO12: OK[0m
+[0;32mI (273) MOTORS:   Motor1 pin=GPIO13: OK[0m
+[0;32mI (283) MOTORS:   Motor2 pin=GPIO15: OK[0m
+[0;32mI (283) MOTORS:   Motor3 pin=GPIO14: OK[0m
+[0;32mI (283) MOTORS: Motors initialized. PWM=25000Hz, bits=10[0m
+[0;32mI (293) BATTERY: Battery ADC initialized on channel 0[0m
+[0;32mI (313) IMU: WHO_AM_I = 0x70 (expected 0x71 or 0x70)[0m
+[0;32mI (423) IMU: MPU9250/6500 initialized. Gyro=±2000dps, Acc=±4g, Rate=1kHz[0m
+[0;32mI (423) RC_SBUS: SBUS initialized on UART1, GPIO4[0m
+[0;32mI (423) FC: Flight controller initialized[0m
+[0;32mI (423) MAIN: Initialization complete![0m
+[0;32mI (423) MAIN: ARM: Throttle LOW + Yaw RIGHT[0m
+[0;32mI (433) MAIN: DISARM: Throttle LOW + Yaw LEFT[0m
+[0;32mI (433) MAIN: Drone task started on Core 0[0m
+[0;32mI (443) main_task: Returned from app_main()[0m
+[0;32mI (443) MAIN: Aux task started on Core 1[0m
+[0;32mI (793) MAIN: Mode=ACRO   Armed=0 Rate=0Hz | Roll=0.2 Pitch=0.0 Yaw=-1.1 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (1293) MAIN: Mode=ACRO   Armed=0 Rate=83Hz | Roll=0.5 Pitch=0.0 Yaw=-2.6 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (1793) MAIN: Mode=ACRO   Armed=0 Rate=83Hz | Roll=0.8 Pitch=0.1 Yaw=-4.2 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (2293) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=1.1 Pitch=0.1 Yaw=-5.7 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (2793) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=1.3 Pitch=0.2 Yaw=-7.3 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (3293) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=1.6 Pitch=0.2 Yaw=-8.8 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (3793) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=1.9 Pitch=0.3 Yaw=-10.4 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (4343) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=2.2 Pitch=0.4 Yaw=-12.1 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (4843) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=2.4 Pitch=0.4 Yaw=-13.6 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (5343) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=2.7 Pitch=0.5 Yaw=-15.2 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (5843) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=2.9 Pitch=0.6 Yaw=-16.7 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (6343) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=3.2 Pitch=0.7 Yaw=-18.2 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (6843) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=3.4 Pitch=0.8 Yaw=-19.8 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (7343) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=3.6 Pitch=0.9 Yaw=-21.3 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (7843) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=3.9 Pitch=1.0 Yaw=-22.9 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (8393) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=4.1 Pitch=1.1 Yaw=-24.6 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (8893) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=4.3 Pitch=1.2 Yaw=-26.1 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (9393) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=4.5 Pitch=1.3 Yaw=-27.7 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (9893) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=4.7 Pitch=1.5 Yaw=-29.2 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (10393) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=4.9 Pitch=1.6 Yaw=-30.8 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (10893) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=5.1 Pitch=1.7 Yaw=-32.3 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (11393) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=5.3 Pitch=1.9 Yaw=-33.8 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (11893) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=5.5 Pitch=2.0 Yaw=-35.4 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (12393) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=5.7 Pitch=2.2 Yaw=-36.9 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (12893) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=5.9 Pitch=2.3 Yaw=-38.5 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (13393) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=6.0 Pitch=2.5 Yaw=-40.0 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (13893) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=6.2 Pitch=2.6 Yaw=-41.4 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (14393) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=4.2 Pitch=-1.9 Yaw=-42.1 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (14893) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=14.9 Pitch=-13.9 Yaw=-49.3 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (15393) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=17.2 Pitch=15.9 Yaw=-64.6 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (15893) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=24.1 Pitch=18.9 Yaw=-64.5 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (16393) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=31.2 Pitch=21.6 Yaw=-63.7 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (16893) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=38.4 Pitch=24.2 Yaw=-62.5 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (17393) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=45.7 Pitch=26.6 Yaw=-61.0 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (17893) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=53.2 Pitch=28.7 Yaw=-59.2 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (18393) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=60.8 Pitch=30.6 Yaw=-57.1 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (18893) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=69.8 Pitch=26.7 Yaw=-51.8 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (19393) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=99.7 Pitch=3.9 Yaw=-62.9 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (19893) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=113.9 Pitch=-28.0 Yaw=-61.5 | Thrust=0.00 Batt=3.07V[0m
+[0;32mI (20393) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=114.2 Pitch=-26.8 Yaw=-58.4 | Thrust=0.00 Batt=3.07V[0m

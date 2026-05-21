@@ -1,96 +1,211 @@
+/*
+ * CF-Drone firmware ported to ESP-IDF
+ *
+ * Main loop mirrors CF-Drone loop() structure:
+ *   readIMU → step[dt] → readRC → estimate → battery → control → sendMotors → LED
+ *
+ * FreeRTOS task structure:
+ *   drone_task  (Core 0, ~1kHz): IMU-driven fast loop
+ *   aux_task    (Core 1, ~10Hz): battery, LED, logging
+ */
+
 #include <stdio.h>
+#include <string.h>
+#include <math.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "driver/i2c.h"
 #include "esp_log.h"
-#include "vl53l1_api.h"
+#include "esp_timer.h"
 
-static const char *TAG = "VL53L1X";
+// Component includes
+#include "math_utils.h"
+#include "imu.h"
+#include "rc_sbus.h"
+#include "motors.h"
+#include "battery.h"
+#include "led_ctrl.h"
+#include "attitude_estimator.h"
+#include "flight_control.h"
+#include "drone_types.h"
 
-#define I2C_MASTER_SCL_IO           18      /*!< gpio number for I2C master clock */
-#define I2C_MASTER_SDA_IO           17      /*!< gpio number for I2C master data  */
-#define I2C_MASTER_NUM              0       /*!< I2C port number for master dev */
-#define I2C_MASTER_FREQ_HZ          400000  /*!< I2C master clock frequency */
+// Networking / Web RC
+#include "nvs_flash.h"
+#include "wifi_ap.h"
+#include "web_rc.h"
 
-static esp_err_t i2c_master_init(void)
-{
-    int i2c_master_port = I2C_MASTER_NUM;
-    i2c_config_t conf = {
-        .mode = I2C_MODE_MASTER,
-        .sda_io_num = I2C_MASTER_SDA_IO,
-        .sda_pullup_en = GPIO_PULLUP_ENABLE,
-        .scl_io_num = I2C_MASTER_SCL_IO,
-        .scl_pullup_en = GPIO_PULLUP_ENABLE,
-        .master.clk_speed = I2C_MASTER_FREQ_HZ,
-    };
-    esp_err_t err = i2c_param_config(i2c_master_port, &conf);
-    if (err != ESP_OK) {
-        return err;
+static const char *TAG = "MAIN";
+
+// ============================================================
+// Global shared flight state
+// ============================================================
+static flight_state_t s_fs;
+
+// ============================================================
+// Time management (mirrors time.ino)
+// ============================================================
+static void step_time(void) {
+    static int64_t prev_us = 0;
+    int64_t now_us = esp_timer_get_time();
+
+    if (prev_us == 0) {
+        s_fs.dt = 0;
+    } else {
+        s_fs.dt = (now_us - prev_us) * 1e-6f;
+        if (s_fs.dt < 0 || s_fs.dt > 1.0f) s_fs.dt = 0;
     }
-    return i2c_driver_install(i2c_master_port, conf.mode, 0, 0, 0);
+    prev_us = now_us;
+    s_fs.t  = now_us * 1e-6f;
+
+    // Compute loop rate (1-second window)
+    static float window_start = 0;
+    static uint32_t rate_count = 0;
+    rate_count++;
+    if (s_fs.t - window_start >= 1.0f) {
+        s_fs.loop_rate = (float)rate_count;
+        window_start = s_fs.t;
+        rate_count = 0;
+    }
 }
 
-void app_main(void)
-{
-    ESP_LOGI(TAG, "Initializing I2C Master");
-    ESP_ERROR_CHECK(i2c_master_init());
-    ESP_LOGI(TAG, "I2C initialized successfully");
+// ============================================================
+// Fast loop task - Core 0
+// Sequence mirrors CF-Drone loop():
+//   readIMU → step → readRC → estimate → control → sendMotors
+// ============================================================
+static void drone_task(void *arg) {
+    ESP_LOGI(TAG, "Drone task started on Core %d", xPortGetCoreID());
 
-    VL53L1_Dev_t dev;
-    VL53L1_DEV pdev = &dev;
-    pdev->I2cDevAddr = 0x52; // Default address is 0x52 (8-bit)
-
-    VL53L1_Error status = VL53L1_ERROR_NONE;
-
-    ESP_LOGI(TAG, "Waiting for device to boot...");
-    status = VL53L1_WaitDeviceBooted(pdev);
-    if (status != VL53L1_ERROR_NONE) {
-        ESP_LOGE(TAG, "Failed to boot VL53L1X: %d", status);
-        return;
-    }
-    ESP_LOGI(TAG, "Device booted!");
-
-    status = VL53L1_DataInit(pdev);
-    if (status != VL53L1_ERROR_NONE) { ESP_LOGE(TAG, "DataInit failed: %d", status); return; }
-    
-    status = VL53L1_StaticInit(pdev);
-    if (status != VL53L1_ERROR_NONE) { ESP_LOGE(TAG, "StaticInit failed: %d", status); return; }
-    
-    // Configure distance mode to Long
-    status = VL53L1_SetDistanceMode(pdev, VL53L1_DISTANCEMODE_LONG);
-    if (status != VL53L1_ERROR_NONE) { ESP_LOGE(TAG, "SetDistanceMode failed: %d", status); return; }
-    
-    status = VL53L1_SetMeasurementTimingBudgetMicroSeconds(pdev, 50000);
-    if (status != VL53L1_ERROR_NONE) { ESP_LOGE(TAG, "SetTimingBudget failed: %d", status); return; }
-    
-    // Inter-measurement period must be > TimingBudget.
-    status = VL53L1_SetInterMeasurementPeriodMilliSeconds(pdev, 60);
-    if (status != VL53L1_ERROR_NONE) {
-        ESP_LOGE(TAG, "SetInterMeasurementPeriod failed: %d", status);
-        return;
-    }
-
-    ESP_LOGI(TAG, "Starting measurement...");
-    status = VL53L1_StartMeasurement(pdev);
+    imu_data_t  imu_data = {0};
+    rc_input_t  rc_data  = {0};
 
     while (1) {
-        VL53L1_RangingMeasurementData_t RangingData;
-        
-        status = VL53L1_WaitMeasurementDataReady(pdev);
-        if (status == VL53L1_ERROR_NONE) {
-            status = VL53L1_GetRangingMeasurementData(pdev, &RangingData);
-            if (status == VL53L1_ERROR_NONE) {
-                if (RangingData.RangeStatus == 0) {
-                    printf("Distance: %d mm\n", RangingData.RangeMilliMeter);
-                } else {
-                    printf("Distance: %d mm (Status: %d)\n", RangingData.RangeMilliMeter, RangingData.RangeStatus);
-                }
-            }
-            VL53L1_ClearInterruptAndStartMeasurement(pdev);
-        } else {
-            ESP_LOGW(TAG, "Timeout waiting for data");
+        // 1. Read IMU (blocking until data ready, ~1kHz)
+        imu_read(&imu_data);
+
+        // 2. Update time delta
+        step_time();
+
+        // 3. Calibrate gyro bias when stationary (landed)
+        if (s_fs.landed) {
+            imu_calibrate_gyro(&imu_data);
         }
-        
-        vTaskDelay(pdMS_TO_TICKS(10));
+
+        // 4. Read RC (non-blocking, returns last frame if no new)
+        rc_sbus_read(&rc_data);
+        if (!rc_data.valid) {
+            web_rc_read(&rc_data);
+        }
+
+        // 5. Attitude estimation: gyro integration + acc correction
+        attitude_estimator_update(&imu_data, &s_fs);
+
+        // 6. Flight control: interpret RC → PID → motor mix + safety
+        fc_update(&s_fs, &rc_data);
+
+        // 7. Write motor values to hardware
+        float motor_vals[4];
+        fc_get_motors(motor_vals);
+        motors_set(motor_vals);
+        motors_send();
+
+        // vTaskDelay(1): ensures IDLE0 gets CPU time to reset the Task Watchdog.
+        // SPI polling transfers are fast (~50µs for 14 bytes at 20MHz),
+        // so this 1-tick delay (1ms) caps the loop at ~1kHz and prevents TWDT.
+        vTaskDelay(1);
     }
+}
+
+// ============================================================
+// Auxiliary loop task - Core 1
+// Sequence: battery → LED → log
+// ============================================================
+static void aux_task(void *arg) {
+    ESP_LOGI(TAG, "Aux task started on Core %d", xPortGetCoreID());
+
+    static float last_log_t = 0;
+
+    while (1) {
+        // Battery voltage update (~2Hz)
+        battery_update();
+        s_fs.battery_voltage = battery_get_voltage();
+
+        // LED status update
+        led_ctrl_update(&s_fs);
+
+        // Log telemetry to console at ~2Hz
+        if (s_fs.t - last_log_t >= 0.5f) {
+            last_log_t = s_fs.t;
+            vec3_t euler = quat_to_euler(s_fs.attitude);
+            ESP_LOGI(TAG,
+                     "Mode=%-6s Armed=%d Rate=%.0fHz | "
+                     "Roll=%.1f Pitch=%.1f Yaw=%.1f | "
+                     "Thrust=%.2f Batt=%.2fV",
+                     fc_get_mode_name(s_fs.mode),
+                     s_fs.armed,
+                     s_fs.loop_rate,
+                     euler.x * 180 / M_PI,
+                     euler.y * 180 / M_PI,
+                     euler.z * 180 / M_PI,
+                     s_fs.thrust_target,
+                     s_fs.battery_voltage);
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(50)); // ~20Hz
+    }
+}
+
+// ============================================================
+// App Main - Initialization
+// Mirrors CF-Drone setup()
+// ============================================================
+void app_main(void) {
+    ESP_LOGI(TAG, "=== CF-Drone ESP-IDF ===");
+    ESP_LOGI(TAG, "Initializing...");
+
+    // Initialize NVS (Required for WiFi)
+    esp_err_t ret = nvs_flash_init();
+    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+      ESP_ERROR_CHECK(nvs_flash_erase());
+      ret = nvs_flash_init();
+    }
+    ESP_ERROR_CHECK(ret);
+
+    // Zero out flight state
+    memset(&s_fs, 0, sizeof(s_fs));
+    s_fs.attitude        = (quaternion_t){1, 0, 0, 0}; // identity
+    s_fs.attitude_target = (quaternion_t){NAN, NAN, NAN, NAN}; // invalid
+    s_fs.mode            = FLIGHT_MODE_STAB;
+    s_fs.armed           = false;
+
+    // Initialize all hardware
+    led_ctrl_init();
+    led_ctrl_set(true); // LED ON during init
+
+    motors_init();
+    motors_stop();
+
+    battery_init();
+
+    imu_init();
+    attitude_estimator_init();
+
+    rc_sbus_init();
+    fc_init();
+
+    wifi_ap_init();
+    web_rc_init();
+
+    led_ctrl_set(false); // LED OFF after init
+    ESP_LOGI(TAG, "Initialization complete!");
+    ESP_LOGI(TAG, "ARM: Throttle LOW + Yaw RIGHT");
+    ESP_LOGI(TAG, "DISARM: Throttle LOW + Yaw LEFT");
+
+    // Launch FreeRTOS tasks
+    xTaskCreatePinnedToCore(
+        drone_task, "drone_task",
+        8192, NULL, 10, NULL, 0);  // Core 0, high priority
+
+    xTaskCreatePinnedToCore(
+        aux_task, "aux_task",
+        4096, NULL, 5, NULL, 1);   // Core 1, lower priority
 }

@@ -1,0 +1,80 @@
+Command: /home/toan/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/toan/dev/tools/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/toan/dev/workspaces/esp/esp32_KDI/build/esp32_KDI.elf /home/toan/dev/workspaces/esp/esp32_KDI/build/bootloader/bootloader.elf -m '/home/toan/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/toan/dev/tools/esp/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.9.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x400de632: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400de9f4: [0;33mtask_wdt_isr[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x400839c5: [0;33m_xt_lowint1[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4000bfed: [0;33m_xtos_set_intlevel[0m[0m in [0;32mROM[0m
+[0m--- 0x4008839a: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m560[0m
+[0m--- (inlined by) [0;33mvPortExitCritical[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x400823ec: [0;33mvPortExitCriticalSafe[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m596[0m
+[0m--- (inlined by) [0;33mesp_intr_enable[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_hw_support/intr_alloc.c[0m[0m:[1;31m912[0m
+[0m--- 0x40082bc9: [0;33mspi_bus_intr_enable[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m733[0m
+[0m--- 0x400e6e96: [0;33mbg_enable[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_hw_support/spi_bus_lock.c[0m[0m:[1;31m334[0m
+[0m--- (inlined by) [0;33mreq_core[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_hw_support/spi_bus_lock.c[0m[0m:[1;31m360[0m
+[0m--- 0x400dff61: [0;33mspi_bus_lock_bg_request[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_hw_support/spi_bus_lock.c[0m[0m:[1;31m783[0m
+[0m--- 0x400daea2: [0;33mspi_device_queue_trans[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1296[0m
+[0m--- 0x400daf54: [0;33mspi_device_transmit[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1337[0m
+[0m--- 0x400d5783: [0;33mmpu_read_reg[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/components/imu/imu.c[0m[0m:[1;31m97[0m
+[0m--- 0x400d5962: [0;33mimu_read[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/components/imu/imu.c[0m[0m:[1;31m210[0m
+[0m--- 0x400d493c: [0;33mdrone_task[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/main/main.c[0m[0m:[1;31m78[0m
+[0m--- 0x4008803d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400de632: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400de9f4: [0;33mtask_wdt_isr[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x400839c5: [0;33m_xt_lowint1[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400daf5a: [0;33mspi_device_transmit[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1338[0m
+[0m--- 0x400d5783: [0;33mmpu_read_reg[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/components/imu/imu.c[0m[0m:[1;31m97[0m
+[0m--- 0x400d5962: [0;33mimu_read[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/components/imu/imu.c[0m[0m:[1;31m210[0m
+[0m--- 0x400d493c: [0;33mdrone_task[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/main/main.c[0m[0m:[1;31m78[0m
+[0m--- 0x4008803d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400de632: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400de9f4: [0;33mtask_wdt_isr[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x400839c5: [0;33m_xt_lowint1[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d4e83: [0;33mquat_from_axis_angle[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/components/math_utils/include/math_utils.h[0m[0m:[1;31m140[0m
+[0m--- 0x400d4f57: [0;33mquat_from_rotation_vector[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/components/math_utils/include/math_utils.h[0m[0m:[1;31m148[0m
+[0m--- 0x400d5001: [0;33mapply_gyro[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/components/attitude_estimator/attitude_estimator.c[0m[0m:[1;31m36[0m
+[0m--- 0x400d5659: [0;33mattitude_estimator_update[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/components/attitude_estimator/attitude_estimator.c[0m[0m:[1;31m76[0m
+[0m--- 0x400d495f: [0;33mdrone_task[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/main/main.c[0m[0m:[1;31m92[0m
+[0m--- 0x4008803d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400de632: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400de9f4: [0;33mtask_wdt_isr[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x400839c5: [0;33m_xt_lowint1[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400d764d: [0;33mbattery_update[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x400d70a3: [0;33mfc_update[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/components/flight_control/flight_control.c[0m[0m:[1;31m336[0m
+[0m--- 0x400d4966: [0;33mdrone_task[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/main/main.c[0m[0m:[1;31m95[0m
+[0m--- 0x4008803d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400de632: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400de9f4: [0;33mtask_wdt_isr[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x400839c5: [0;33m_xt_lowint1[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400db87c: [0;33m_ledc_fade_hw_acquire[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_driver_ledc/src/ledc.c[0m[0m:[1;31m202[0m
+[0m--- 0x400dc1ca: [0;33mledc_set_duty[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_driver_ledc/src/ledc.c[0m[0m:[1;31m1064[0m
+[0m--- 0x400d5b86: [0;33mmotors_send[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/components/motors/motors.c[0m[0m:[1;31m81[0m
+[0m--- 0x400d4976: [0;33mdrone_task[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/main/main.c[0m[0m:[1;31m101[0m
+[0m--- 0x4008803d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400de632: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400de9f4: [0;33mtask_wdt_isr[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x400839c5: [0;33m_xt_lowint1[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400dc13d: [0;33mledc_channel_config[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_driver_ledc/src/ledc.c[0m[0m:[1;31m976[0m
+[0m--- 0x400d4976: [0;33mdrone_task[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/main/main.c[0m[0m:[1;31m101[0m
+[0m--- 0x4008803d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400de632: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400de9f4: [0;33mtask_wdt_isr[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x400839c5: [0;33m_xt_lowint1[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4000bfed: [0;33m_xtos_set_intlevel[0m[0m in [0;32mROM[0m
+[0m--- 0x4008839a: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m560[0m
+[0m--- (inlined by) [0;33mvPortExitCritical[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x400823ec: [0;33mvPortExitCriticalSafe[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m596[0m
+[0m--- (inlined by) [0;33mesp_intr_enable[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_hw_support/intr_alloc.c[0m[0m:[1;31m912[0m
+[0m--- 0x40082bc9: [0;33mspi_bus_intr_enable[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m733[0m
+[0m--- 0x400e6e96: [0;33mbg_enable[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_hw_support/spi_bus_lock.c[0m[0m:[1;31m334[0m
+[0m--- (inlined by) [0;33mreq_core[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_hw_support/spi_bus_lock.c[0m[0m:[1;31m360[0m
+[0m--- 0x400dff61: [0;33mspi_bus_lock_bg_request[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_hw_support/spi_bus_lock.c[0m[0m:[1;31m783[0m
+[0m--- 0x400daea2: [0;33mspi_device_queue_trans[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1296[0m
+[0m--- 0x400daf54: [0;33mspi_device_transmit[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1337[0m
+[0m--- 0x400d5783: [0;33mmpu_read_reg[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/components/imu/imu.c[0m[0m:[1;31m97[0m
+[0m--- 0x400d5962: [0;33mimu_read[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/components/imu/imu.c[0m[0m:[1;31m210[0m
+[0m--- 0x400d493c: [0;33mdrone_task[0m[0m at [0;32m/home/toan/dev/workspaces/esp/esp32_KDI/main/main.c[0m[0m:[1;31m78[0m
+[0m--- 0x4008803d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/toan/dev/tools/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[1;31m--- Error: device reports readiness to read but returned no data (device disconnected or multiple access on port?)[0m
+[0;33m--- Waiting for the device to reconnect[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
+[0m
