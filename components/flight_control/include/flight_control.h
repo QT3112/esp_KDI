@@ -36,6 +36,12 @@ bool fc_is_armed(void);
 void fc_reset_pids(void);
 
 /**
+ * @brief Reset only the altitude hold PID integrator.
+ *        Gọi khi chuyển ra khỏi chế độ ALTHOLD.
+ */
+void fc_reset_alt_pid(void);
+
+/**
  * @brief Get current flight mode name string
  */
 const char* fc_get_mode_name(flight_mode_t mode);

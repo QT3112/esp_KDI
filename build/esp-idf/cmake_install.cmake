@@ -349,6 +349,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/vl53l1x-st-api/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/tof_sensor/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/flight_control/cmake_install.cmake")
 endif()
 

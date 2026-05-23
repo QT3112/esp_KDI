@@ -117,8 +117,12 @@ $<TARGET_FILE:__idf_battery>
 $<TARGET_FILE:idf::attitude_estimator>
 $<TARGET_FILE:__idf_imu>
 $<TARGET_FILE:__idf_motors>
+$<TARGET_FILE:idf::vl53l1x-st-api>
+$<TARGET_FILE:idf::tof_sensor>
+$<TARGET_FILE:__idf_vl53l1x-st-api>
 $<TARGET_FILE:idf::flight_control>
 $<TARGET_FILE:__idf_rc_sbus>
+$<TARGET_FILE:__idf_tof_sensor>
 $<TARGET_FILE:idf::esp_event>
 $<TARGET_FILE:idf::nvs_flash>
 $<TARGET_FILE:idf::esp_phy>

@@ -1,0 +1,847 @@
+Command: /home/toan/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/toan/dev/tools/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/toan/dev/workspaces/esp/esp32_KDI/build/esp32_KDI.elf /home/toan/dev/workspaces/esp/esp32_KDI/build/bootloader/bootloader.elf -m '/home/toan/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/toan/dev/tools/esp/esp-idf/tools/idf.py'
+[0;32mI (13) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (13) boot: compile time May 21 2026 16:01:36[0m
+[0;32mI (13) boot: Multicore bootloader[0m
+[0;32mI (14) boot: chip revision: v3.1[0m
+[0;32mI (16) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (20) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (24) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (27) boot: Enabling RNG early entropy source...[0m
+[0;32mI (32) boot: Partition Table:[0m
+[0;32mI (34) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (41) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (47) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (54) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (60) boot: End of partition table[0m
+[0;32mI (64) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=26b74h (158580) map[0m
+[0;32mI (125) esp_image: segment 1: paddr=00036b9c vaddr=3ffb0000 size=047f0h ( 18416) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=0003b394 vaddr=40080000 size=04c84h ( 19588) load[0m
+[0;32mI (140) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9e104h (647428) map[0m
+[0;32mI (362) esp_image: segment 4: paddr=000de12c vaddr=40084c84 size=16b24h ( 92964) load[0m
+[0;32mI (398) esp_image: segment 5: paddr=000f4c58 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (412) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (412) boot: Disabling RNG early entropy source...[0m
+[0;32mI (422) cpu_start: Multicore app[0m
+[0;32mI (430) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (431) cpu_start: Pro cpu start user code[0m
+[0;32mI (431) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (433) app_init: Application information:[0m
+[0;32mI (436) app_init: Project name:     esp32_KDI[0m
+[0;32mI (440) app_init: App version:      a11d879-dirty[0m
+[0;32mI (445) app_init: Compile time:     May 23 2026 12:17:20[0m
+[0;32mI (450) app_init: ELF file SHA256:  3089450b9...[0m
+[0;32mI (454) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (458) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (462) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (466) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (470) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (476) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (481) heap_init: At 3FFB9248 len 00026DB8 (155 KiB): DRAM[0m
+[0;32mI (486) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (492) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (497) heap_init: At 4009B7A8 len 00004858 (18 KiB): IRAM[0m
+[0;32mI (504) spi_flash: detected chip: generic[0m
+[0;32mI (506) spi_flash: flash io: dio[0m
+[0;33mW (509) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (520) main_task: Started on CPU0[0m
+[0;32mI (530) main_task: Calling app_main()[0m
+[0;32mI (530) MAIN: === CF-Drone ESP-IDF ===[0m
+[0;32mI (530) MAIN: Initializing...[0m
+[0;32mI (620) MOTORS: Initializing motors...[0m
+[0;32mI (620) MOTORS:   Motor0 pin=GPIO12: OK[0m
+[0;32mI (620) MOTORS:   Motor1 pin=GPIO13: OK[0m
+[0;32mI (620) MOTORS:   Motor2 pin=GPIO15: OK[0m
+[0;32mI (620) MOTORS:   Motor3 pin=GPIO14: OK[0m
+[0;32mI (620) MOTORS: Motors initialized. PWM=25000Hz, bits=10[0m
+[0;32mI (630) BATTERY: Battery ADC initialized on channel 0[0m
+[0;32mI (650) IMU: WHO_AM_I = 0x70 (expected 0x71 or 0x70)[0m
+[0;32mI (760) IMU: MPU9250/6500 initialized. Gyro=±2000dps, Acc=±4g, Rate=1kHz[0m
+[0;32mI (760) RC_SBUS: SBUS initialized on UART1, GPIO4[0m
+[0;32mI (760) FC: Flight controller initialized[0m
+[0;32mI (760) TOF: I2C Master OK (SDA=GPIO16, SCL=GPIO17, 400kHz)[0m
+[1;31mE (770) TOF: WaitDeviceBooted failed: -13 (Kiểm tra kết nối I2C!)[0m
+[0;33mW (770) MAIN: TOF sensor init FAILED – ALTHOLD mode unavailable[0m
+[0;32mI (790) wifi:wifi driver task: 3ffc2178, prio:23, stack:6656, core=0[0m
+[0;32mI (800) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (800) wifi:wifi certification version: v7.0[0m
+[0;32mI (800) wifi:config NVS flash: enabled[0m
+[0;32mI (800) wifi:config nano formatting: disabled[0m
+[0;32mI (800) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (810) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (810) wifi:Init management short buffer num: 32[0m
+[0;32mI (820) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (820) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (830) wifi:Init static rx buffer num: 10[0m
+[0;32mI (830) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (830) wifi_init: rx ba win: 6[0m
+[0;32mI (840) wifi_init: accept mbox: 6[0m
+[0;32mI (840) wifi_init: tcpip mbox: 32[0m
+[0;32mI (840) wifi_init: udp mbox: 6[0m
+[0;32mI (850) wifi_init: tcp mbox: 6[0m
+[0;32mI (850) wifi_init: tcp tx win: 5760[0m
+[0;32mI (850) wifi_init: tcp rx win: 5760[0m
+[0;32mI (850) wifi_init: tcp mss: 1440[0m
+[0;32mI (860) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (860) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (870) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (960) wifi:mode : softAP (b0:cb:d8:0f:56:61)[0m
+[0;32mI (960) wifi:Total power save buffer number: 16[0m
+[0;32mI (970) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (970) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (970) WIFI_AP: wifi_ap_init finished. SSID:Saolatek_drone_wifi channel:1[0m
+[0;32mI (970) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (990) WEB_RC: Web RC Server started on port 80[0m
+[0;32mI (990) MAIN: Initialization complete![0m
+[0;32mI (990) MAIN: ARM: Throttle LOW + Yaw RIGHT[0m
+[0;32mI (990) MAIN: DISARM: Throttle LOW + Yaw LEFT[0m
+[0;32mI (1000) MAIN: Drone task started on Core 0[0m
+[0;32mI (1000) TOF: TOF task started on Core 1[0m
+[0;32mI (1000) main_task: Returned from app_main()[0m
+[0;32mI (1010) MAIN: Aux task started on Core 1[0m
+[0;32mI (1010) MAIN: Mode=ACRO   Armed=0 Rate=0Hz | Roll=0.0 Pitch=-0.0 Yaw=0.0 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (1190) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1210) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1230) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1250) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1270) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1290) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1310) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1330) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1350) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1370) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1390) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1410) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1430) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1450) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1470) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1490) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1510) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (1520) MAIN: Mode=ACRO   Armed=0 Rate=52Hz | Roll=0.3 Pitch=0.0 Yaw=-1.6 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (1530) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1550) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1570) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1590) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1610) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1630) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1650) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1670) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1690) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1710) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1730) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1750) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1770) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1790) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1810) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1830) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1850) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1870) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1890) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1910) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1930) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1950) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1970) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (1990) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2010) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (2020) MAIN: Mode=ACRO   Armed=0 Rate=52Hz | Roll=0.6 Pitch=0.1 Yaw=-3.2 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (2030) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2050) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2070) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2090) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2110) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2130) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2150) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2170) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2190) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2210) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2230) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2250) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2270) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2290) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2310) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2330) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2350) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2370) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2390) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2410) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2430) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2450) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2470) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2490) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2510) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (2520) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=0.9 Pitch=0.1 Yaw=-4.6 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (2530) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2550) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2570) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2590) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2610) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2630) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2650) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2670) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2690) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2710) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2730) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2750) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2770) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2790) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2810) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2830) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2850) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2870) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2890) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2910) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2930) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2950) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2970) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (2990) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3010) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3030) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3050) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3070) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (3070) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=0.9 Pitch=0.0 Yaw=-4.6 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (3090) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3110) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3130) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3150) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3170) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3190) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3210) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3230) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3250) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3270) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3290) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3310) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3330) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3350) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3370) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3390) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3410) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3430) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3450) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3470) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3490) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3510) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3530) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3550) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3570) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (3570) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=0.8 Pitch=-0.0 Yaw=-4.6 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (3590) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3610) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3630) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3650) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3670) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3690) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3710) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3730) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3750) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3770) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3790) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3810) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3830) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3850) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3870) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3890) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3910) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3930) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3950) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3970) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (3990) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4010) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4030) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4050) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4070) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (4070) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=0.8 Pitch=-0.1 Yaw=-4.6 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (4090) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4110) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4130) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4150) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4170) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4190) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4210) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4230) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4250) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4270) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4290) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4310) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4330) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4350) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4370) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4390) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4410) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4430) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4450) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4470) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4490) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4510) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4530) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4550) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4570) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (4570) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=0.7 Pitch=-0.1 Yaw=-4.6 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (4590) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4610) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4630) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4650) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4670) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4690) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4710) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4730) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4750) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4770) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4790) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4810) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4830) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4850) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4870) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4890) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4910) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4930) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4950) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4970) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (4990) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5010) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5030) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5050) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5070) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (5070) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=0.6 Pitch=-0.2 Yaw=-4.6 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (5090) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5110) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5130) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5150) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5170) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5190) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5210) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5230) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5250) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5270) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5290) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5310) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5330) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5350) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5370) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5390) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5410) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5430) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5450) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5470) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5490) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5510) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5530) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5550) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5570) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (5570) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=0.8 Pitch=-0.5 Yaw=-5.1 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (5590) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5610) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5630) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5650) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5670) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5690) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5710) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5730) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5750) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5770) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5790) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5810) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5830) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5850) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5870) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5890) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5910) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5930) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5950) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5970) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (5990) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6010) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6030) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6050) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6070) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (6070) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=0.6 Pitch=-0.6 Yaw=-22.2 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (6090) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6110) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6130) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6150) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6170) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6190) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6210) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6230) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6250) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6270) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6290) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6310) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6330) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6350) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6370) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6390) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6410) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6430) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6450) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6470) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6490) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6510) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6530) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6550) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6570) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (6570) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=0.6 Pitch=-0.6 Yaw=-22.2 | Thrust=0.00 Alt=-1.000m Batt=3.07V[0m
+[1;31mE (6590) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6610) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6630) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6650) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6670) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6690) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6710) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6730) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6750) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6770) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6790) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6810) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6830) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6850) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6870) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6890) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6910) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6930) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6950) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6970) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (6990) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7010) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7030) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7050) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7070) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (7070) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=0.6 Pitch=-0.7 Yaw=-22.2 | Thrust=0.00 Alt=-1.000m Batt=3.07V[0m
+[1;31mE (7090) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7110) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7130) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7150) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7170) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7190) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7210) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7230) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7250) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7270) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7290) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7310) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7330) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7350) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7370) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7390) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7410) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7430) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7450) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7470) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7490) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7510) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7530) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7550) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7570) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (7570) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=0.5 Pitch=-0.7 Yaw=-22.2 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (7590) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7610) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7630) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7650) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7670) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7690) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7710) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7730) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7750) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7770) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7790) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7810) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7830) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7850) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7870) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7890) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7910) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7930) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7950) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7970) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (7990) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8010) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8030) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8050) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8070) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (8070) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=0.5 Pitch=-0.8 Yaw=-22.2 | Thrust=0.00 Alt=-1.000m Batt=3.07V[0m
+[1;31mE (8090) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8110) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8130) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8150) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8170) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8190) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8210) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8230) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8250) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8270) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8290) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8310) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8330) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8350) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8370) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8390) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8410) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8430) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8450) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8470) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8490) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8510) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8530) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8550) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8570) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8590) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8610) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (8620) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=0.4 Pitch=-0.8 Yaw=-22.3 | Thrust=0.00 Alt=-1.000m Batt=3.07V[0m
+[1;31mE (8630) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8650) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8670) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8690) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8710) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8730) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8750) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8770) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8790) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8810) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8830) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8850) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8870) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8890) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8910) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8930) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8950) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8970) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (8990) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9010) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9030) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9050) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9070) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9090) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9110) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (9120) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=0.4 Pitch=-0.8 Yaw=-22.3 | Thrust=0.00 Alt=-1.000m Batt=3.07V[0m
+[1;31mE (9130) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9150) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9170) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9190) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9210) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9230) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9250) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9270) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9290) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9310) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9330) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9350) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9370) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9390) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9410) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9430) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9450) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9470) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9490) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9510) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9530) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9550) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9570) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9590) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9610) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (9620) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=0.4 Pitch=-0.9 Yaw=-26.8 | Thrust=0.00 Alt=-1.000m Batt=3.07V[0m
+[1;31mE (9630) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9650) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9670) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9690) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9710) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9730) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9750) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9770) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9790) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9810) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9830) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9850) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9870) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9890) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9910) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9930) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9950) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9970) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (9990) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10010) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10030) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10050) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10070) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10090) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10110) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (10120) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=0.3 Pitch=-1.2 Yaw=-35.3 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (10130) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10150) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10170) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10190) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10210) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10230) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10250) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10270) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10290) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10310) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10330) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10350) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10370) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10390) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10410) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10430) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10450) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10470) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10490) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10510) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10530) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10550) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10570) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10590) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10610) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (10620) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=0.6 Pitch=-1.0 Yaw=-35.3 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (10630) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10650) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10670) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10690) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10710) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10730) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10750) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10770) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10790) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10810) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10830) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10850) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10870) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10890) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10910) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10930) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10950) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10970) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (10990) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11010) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11030) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11050) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11070) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11090) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11110) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (11120) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=53.1 Pitch=-19.0 Yaw=-53.0 | Thrust=0.00 Alt=-1.000m Batt=3.07V[0m
+[1;31mE (11130) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11150) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11170) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11190) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11210) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11230) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11250) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11270) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11290) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11310) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11330) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11350) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11370) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11390) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11410) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11430) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11450) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11470) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11490) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11510) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11530) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11550) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11570) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11590) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11610) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11630) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11650) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11670) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (11670) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=73.8 Pitch=-17.5 Yaw=-43.8 | Thrust=0.00 Alt=-1.000m Batt=3.07V[0m
+[1;31mE (11690) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11710) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11730) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11750) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11770) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11790) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11810) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11830) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11850) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11870) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11890) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11910) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11930) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11950) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11970) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (11990) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12010) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12030) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12050) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12070) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12090) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12110) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12130) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12150) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12170) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (12170) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=102.2 Pitch=-7.0 Yaw=-42.3 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (12190) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12210) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12230) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12250) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12270) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12290) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12310) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12330) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12350) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12370) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12390) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12410) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12430) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12450) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12470) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12490) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12510) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12530) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12550) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12570) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12590) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12610) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12630) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12650) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12670) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (12670) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=90.0 Pitch=-15.9 Yaw=-45.9 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (12690) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12710) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12730) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12750) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12770) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12790) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12810) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12830) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12850) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12870) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12890) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12910) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12930) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12950) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12970) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (12990) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13010) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13030) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13050) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13070) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13090) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13110) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13130) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13150) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13170) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (13170) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=69.0 Pitch=-19.5 Yaw=-49.9 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (13190) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13210) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13230) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13250) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13270) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13290) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13310) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13330) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13350) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13370) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13390) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13410) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13430) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13450) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13470) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13490) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13510) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13530) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13550) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13570) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13590) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13610) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13630) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13650) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13670) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13690) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13710) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (13720) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=53.8 Pitch=-25.5 Yaw=-37.7 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (13730) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13750) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13770) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13790) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13810) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13830) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13850) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13870) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13890) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13910) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13930) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13950) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13970) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (13990) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14010) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14030) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14050) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14070) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14090) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14110) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14130) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14150) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14170) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14190) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14210) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (14220) MAIN: Mode=ACRO   Armed=0 Rate=101Hz | Roll=47.8 Pitch=-35.4 Yaw=-26.0 | Thrust=0.00 Alt=-1.000m Batt=3.07V[0m
+[1;31mE (14230) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14250) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14270) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14290) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14310) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14330) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14350) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14370) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14390) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14410) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14430) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14450) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14470) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14490) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14510) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14530) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14550) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14570) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14590) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14610) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14630) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14650) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14670) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14690) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14710) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (14720) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=50.8 Pitch=-29.2 Yaw=-21.0 | Thrust=0.00 Alt=-1.000m Batt=3.06V[0m
+[1;31mE (14730) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14750) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14770) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14790) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14810) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14830) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14850) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14870) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14890) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14910) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14930) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14950) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14970) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (14990) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15010) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15030) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15050) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15070) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15090) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15110) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15130) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15150) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15170) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15190) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15210) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[0;32mI (15220) MAIN: Mode=ACRO   Armed=0 Rate=100Hz | Roll=42.0 Pitch=-33.9 Yaw=-17.2 | Thrust=0.00 Alt=-1.000m Batt=3.07V[0m
+[1;31mE (15230) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15250) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15270) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15290) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15310) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15330) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15350) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15370) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15390) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15410) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15430) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15450) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15470) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15490) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15510) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m
+[1;31mE (15530) TOF: Cảm biến mất kết nối (lỗi liên tiếp >= 10)[0m

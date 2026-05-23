@@ -32,6 +32,7 @@
 #include "nvs_flash.h"
 #include "wifi_ap.h"
 #include "web_rc.h"
+#include "tof_sensor.h"
 
 static const char *TAG = "MAIN";
 
@@ -99,7 +100,10 @@ static void drone_task(void *arg) {
         // 5. Attitude estimation: gyro integration + acc correction
         attitude_estimator_update(&imu_data, &s_fs);
 
-        // 6. Flight control: interpret RC → PID → motor mix + safety
+        // 6. Đọc độ cao từ TOF sensor (thread-safe, non-blocking)
+        s_fs.tof_valid = tof_sensor_get_altitude(&s_fs.alt_measured_m);
+
+        // 7. Flight control: interpret RC → PID → motor mix + safety
         fc_update(&s_fs, &rc_data);
 
         // 7. Write motor values to hardware
@@ -139,7 +143,7 @@ static void aux_task(void *arg) {
             ESP_LOGI(TAG,
                      "Mode=%-6s Armed=%d Rate=%.0fHz | "
                      "Roll=%.1f Pitch=%.1f Yaw=%.1f | "
-                     "Thrust=%.2f Batt=%.2fV",
+                     "Thrust=%.2f Alt=%.3fm Batt=%.2fV",
                      fc_get_mode_name(s_fs.mode),
                      s_fs.armed,
                      s_fs.loop_rate,
@@ -147,6 +151,7 @@ static void aux_task(void *arg) {
                      euler.y * 180 / M_PI,
                      euler.z * 180 / M_PI,
                      s_fs.thrust_target,
+                     s_fs.alt_measured_m,
                      s_fs.battery_voltage);
         }
 
@@ -176,6 +181,9 @@ void app_main(void) {
     s_fs.attitude_target = (quaternion_t){NAN, NAN, NAN, NAN}; // invalid
     s_fs.mode            = FLIGHT_MODE_STAB;
     s_fs.armed           = false;
+    s_fs.alt_measured_m  = -1.0f;  // Chưa có dữ liệu TOF
+    s_fs.alt_target_m    = 0.0f;
+    s_fs.tof_valid       = false;
 
     // Initialize all hardware
     led_ctrl_init();
@@ -192,6 +200,11 @@ void app_main(void) {
     rc_sbus_init();
     fc_init();
 
+    // TOF Sensor (I2C: SDA=GPIO16, SCL=GPIO17)
+    if (!tof_sensor_init()) {
+        ESP_LOGW(TAG, "TOF sensor init FAILED – ALTHOLD mode unavailable");
+    }
+
     wifi_ap_init();
     web_rc_init();
 
@@ -204,6 +217,10 @@ void app_main(void) {
     xTaskCreatePinnedToCore(
         drone_task, "drone_task",
         8192, NULL, 10, NULL, 0);  // Core 0, high priority
+
+    xTaskCreatePinnedToCore(
+        tof_sensor_task, "tof_task",
+        4096, NULL, 6, NULL, 1);   // Core 1, medium-high priority
 
     xTaskCreatePinnedToCore(
         aux_task, "aux_task",

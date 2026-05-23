@@ -29,6 +29,17 @@ static const char *TAG = "FC";
 #define YAW_P           3.0f
 // D-term LPF alpha (~40Hz cutoff)
 #define RATES_D_LPF     0.2f
+// Altitude Hold PID
+#define ALT_P           0.50f   // Gain tỉ lệ: sai số 1m → 0.5 thrust
+#define ALT_I           0.08f   // Gain tích phân: chống trôi chậm
+#define ALT_D           0.25f   // Gain đạo hàm: giảm dao động
+#define ALT_I_LIM       0.20f   // Giới hạn tích phân
+#define ALT_OUT_MAX     0.30f   // Ngưỡng thrust tối đa PID có thể thêm vào
+// Deadband cần ga: ±5% quanh 50% → khoảng [0.45, 0.55]
+#define ALTHOLD_THROTTLE_CENTER  0.50f
+#define ALTHOLD_THROTTLE_DBAND   0.05f
+// Tốc độ cập nhật setpoint khi phi công đẩy ga (m/s)
+#define ALTHOLD_CLIMB_RATE_MPS   0.5f
 // ============================================================
 // Limits
 // ============================================================
@@ -45,6 +56,7 @@ static const char *TAG = "FC";
 // ============================================================
 static pid_t s_roll_rate_pid, s_pitch_rate_pid, s_yaw_rate_pid;
 static pid_t s_roll_pid, s_pitch_pid, s_yaw_pid;
+static pid_t s_alt_pid;
 static float s_motors[4] = {0};
 static bool s_is_armed = false;
 
@@ -90,6 +102,8 @@ void fc_init(void) {
     pid_init(&s_roll_pid,  ROLL_P,  0, 0, 0, 1.0f, 0.1f);
     pid_init(&s_pitch_pid, PITCH_P, 0, 0, 0, 1.0f, 0.1f);
     pid_init(&s_yaw_pid,   YAW_P,   0, 0, 0, 1.0f, 0.1f);
+    pid_init(&s_alt_pid,   ALT_P,   ALT_I,   ALT_D,
+             ALT_I_LIM,    1.0f,    0.1f);
     memset(s_motors, 0, sizeof(s_motors));
     ESP_LOGI(TAG, "Flight controller initialized");
 }
@@ -101,6 +115,11 @@ void fc_reset_pids(void) {
     pid_reset(&s_roll_pid);
     pid_reset(&s_pitch_pid);
     pid_reset(&s_yaw_pid);
+    pid_reset(&s_alt_pid);
+}
+
+void fc_reset_alt_pid(void) {
+    pid_reset(&s_alt_pid);
 }
 
 bool fc_is_armed(void) {
@@ -377,6 +396,40 @@ static void safety_battery(flight_state_t *fs) {
 }
 
 // ============================================================
+// Altitude Hold PID (ALTHOLD mode)
+// Chạy trước control_attitude để điều chỉnh thrust_target
+// ============================================================
+static void control_altitude_hold(flight_state_t *fs, float rc_throttle) {
+    // Chỉ kích hoạt khi: đang ở ALTHOLD mode + tof hợp lệ + đã arm
+    if (fs->mode != FLIGHT_MODE_ALTHOLD || !fs->tof_valid || !fs->armed) {
+        return;
+    }
+    if (fs->alt_measured_m < 0.0f) {
+        return;  // Chưa có dữ liệu TOF
+    }
+
+    float throttle_offset = rc_throttle - ALTHOLD_THROTTLE_CENTER;
+    bool in_deadband = (fabsf(throttle_offset) <= ALTHOLD_THROTTLE_DBAND);
+
+    if (!in_deadband) {
+        // Phi công đang đẩy ga → cập nhật setpoint độ cao
+        // Tốc độ thay đổi tỉ lệ với độ lệch khỏi center
+        float climb_rate = (throttle_offset / (0.5f - ALTHOLD_THROTTLE_DBAND))
+                           * ALTHOLD_CLIMB_RATE_MPS;
+        fs->alt_target_m += climb_rate * fs->dt;
+        // Reset tích phân để tránh windup khi phi công đang điều khiển thủ công
+        pid_reset(&s_alt_pid);
+    } else {
+        // Trong deadband → giữ độ cao mục tiêu bằng PID
+        float alt_error = fs->alt_target_m - fs->alt_measured_m;
+        float correction = pid_update(&s_alt_pid, alt_error, fs->t);
+        correction = fc_clamp(correction, -ALT_OUT_MAX, ALT_OUT_MAX);
+        fs->thrust_target = fc_clamp(fs->thrust_target + correction,
+                                     MOT_THR_MIN, MOT_THR_MAX);
+    }
+}
+
+// ============================================================
 // Main FC update
 // ============================================================
 void fc_update(flight_state_t *fs, const rc_input_t *rc) {
@@ -388,7 +441,10 @@ void fc_update(flight_state_t *fs, const rc_input_t *rc) {
     safety_inverted(fs);
     safety_battery(fs);
 
-    // 3. Cascaded PID
+    // 3. Altitude Hold PID (điều chỉnh thrust_target nếu ở ALTHOLD mode)
+    control_altitude_hold(fs, rc->throttle);
+
+    // 4. Cascaded attitude/rate PID
     control_attitude(fs); // Outer: attitude → rates target
     control_rates(fs);    // Inner: rates → torques
     control_torque(fs);   // Mixer: torques → motor values

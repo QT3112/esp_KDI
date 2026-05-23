@@ -66,4 +66,8 @@ typedef struct {
     float           t;               // current time (s)
     float           dt;              // loop delta time (s)
     float           loop_rate;       // Hz
+    // --- TOF / Altitude Hold ---
+    float           alt_measured_m;  // Độ cao đo từ TOF (m), -1.0f nếu không hợp lệ
+    float           alt_target_m;    // Độ cao mục tiêu khi ở chế độ ALTHOLD
+    bool            tof_valid;       // Cảm biến TOF đang hoạt động bình thường
 } flight_state_t;

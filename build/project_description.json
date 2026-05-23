@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "esp32_KDI",
-    "project_version":    "429a8c2-dirty",
+    "project_version":    "a11d879-dirty",
     "project_path":       "/home/toan/dev/workspaces/esp/esp32_KDI",
     "idf_path":           "/home/toan/dev/tools/esp/esp-idf",
     "build_dir":          "/home/toan/dev/workspaces/esp/esp32_KDI/build",
@@ -25,8 +25,8 @@
         "COMPONENT_KCONFIGS_PROJBUILD" : "/home/toan/dev/tools/esp/esp-idf/components/bootloader/Kconfig.projbuild;/home/toan/dev/tools/esp/esp-idf/components/esp_app_format/Kconfig.projbuild;/home/toan/dev/tools/esp/esp-idf/components/esp_rom/Kconfig.projbuild;/home/toan/dev/tools/esp/esp-idf/components/esptool_py/Kconfig.projbuild;/home/toan/dev/tools/esp/esp-idf/components/partition_table/Kconfig.projbuild"
     },
     "common_component_reqs": [ "cxx", "newlib", "freertos", "esp_hw_support", "heap", "log", "soc", "hal", "esp_rom", "esp_common", "esp_system", "xtensa" ],
-    "build_components" : [ "app_update", "attitude_estimator", "battery", "bootloader", "bootloader_support", "cxx", "driver", "drone_config", "efuse", "esp_adc", "esp_app_format", "esp_bootloader_format", "esp_coex", "esp_common", "esp_driver_ana_cmpr", "esp_driver_bitscrambler", "esp_driver_dac", "esp_driver_gpio", "esp_driver_gptimer", "esp_driver_i2c", "esp_driver_i2s", "esp_driver_ledc", "esp_driver_mcpwm", "esp_driver_parlio", "esp_driver_pcnt", "esp_driver_rmt", "esp_driver_sdio", "esp_driver_sdm", "esp_driver_sdmmc", "esp_driver_sdspi", "esp_driver_spi", "esp_driver_tsens", "esp_driver_twai", "esp_driver_uart", "esp_driver_usb_serial_jtag", "esp_event", "esp_http_server", "esp_hw_support", "esp_mm", "esp_netif", "esp_netif_stack", "esp_partition", "esp_phy", "esp_pm", "esp_psram", "esp_ringbuf", "esp_rom", "esp_security", "esp_system", "esp_timer", "esp_vfs_console", "esp_wifi", "esptool_py", "flight_control", "freertos", "hal", "heap", "http_parser", "imu", "led_ctrl", "log", "lwip", "main", "math_utils", "mbedtls", "motors", "newlib", "nvs_flash", "partition_table", "pthread", "rc_sbus", "sdmmc", "soc", "spi_flash", "vfs", "web_rc", "wifi_ap", "wpa_supplicant", "xtensa", "" ],
-    "build_component_paths" : [ "/home/toan/dev/tools/esp/esp-idf/components/app_update", "/home/toan/dev/workspaces/esp/esp32_KDI/components/attitude_estimator", "/home/toan/dev/workspaces/esp/esp32_KDI/components/battery", "/home/toan/dev/tools/esp/esp-idf/components/bootloader", "/home/toan/dev/tools/esp/esp-idf/components/bootloader_support", "/home/toan/dev/tools/esp/esp-idf/components/cxx", "/home/toan/dev/tools/esp/esp-idf/components/driver", "/home/toan/dev/workspaces/esp/esp32_KDI/components/drone_config", "/home/toan/dev/tools/esp/esp-idf/components/efuse", "/home/toan/dev/tools/esp/esp-idf/components/esp_adc", "/home/toan/dev/tools/esp/esp-idf/components/esp_app_format", "/home/toan/dev/tools/esp/esp-idf/components/esp_bootloader_format", "/home/toan/dev/tools/esp/esp-idf/components/esp_coex", "/home/toan/dev/tools/esp/esp-idf/components/esp_common", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_ana_cmpr", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_bitscrambler", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_dac", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_gpio", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_gptimer", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_i2c", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_i2s", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_ledc", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_mcpwm", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_parlio", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_pcnt", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_rmt", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_sdio", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_sdm", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_sdmmc", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_sdspi", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_spi", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_tsens", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_twai", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_uart", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_usb_serial_jtag", "/home/toan/dev/tools/esp/esp-idf/components/esp_event", "/home/toan/dev/tools/esp/esp-idf/components/esp_http_server", "/home/toan/dev/tools/esp/esp-idf/components/esp_hw_support", "/home/toan/dev/tools/esp/esp-idf/components/esp_mm", "/home/toan/dev/tools/esp/esp-idf/components/esp_netif", "/home/toan/dev/tools/esp/esp-idf/components/esp_netif_stack", "/home/toan/dev/tools/esp/esp-idf/components/esp_partition", "/home/toan/dev/tools/esp/esp-idf/components/esp_phy", "/home/toan/dev/tools/esp/esp-idf/components/esp_pm", "/home/toan/dev/tools/esp/esp-idf/components/esp_psram", "/home/toan/dev/tools/esp/esp-idf/components/esp_ringbuf", "/home/toan/dev/tools/esp/esp-idf/components/esp_rom", "/home/toan/dev/tools/esp/esp-idf/components/esp_security", "/home/toan/dev/tools/esp/esp-idf/components/esp_system", "/home/toan/dev/tools/esp/esp-idf/components/esp_timer", "/home/toan/dev/tools/esp/esp-idf/components/esp_vfs_console", "/home/toan/dev/tools/esp/esp-idf/components/esp_wifi", "/home/toan/dev/tools/esp/esp-idf/components/esptool_py", "/home/toan/dev/workspaces/esp/esp32_KDI/components/flight_control", "/home/toan/dev/tools/esp/esp-idf/components/freertos", "/home/toan/dev/tools/esp/esp-idf/components/hal", "/home/toan/dev/tools/esp/esp-idf/components/heap", "/home/toan/dev/tools/esp/esp-idf/components/http_parser", "/home/toan/dev/workspaces/esp/esp32_KDI/components/imu", "/home/toan/dev/workspaces/esp/esp32_KDI/components/led_ctrl", "/home/toan/dev/tools/esp/esp-idf/components/log", "/home/toan/dev/tools/esp/esp-idf/components/lwip", "/home/toan/dev/workspaces/esp/esp32_KDI/main", "/home/toan/dev/workspaces/esp/esp32_KDI/components/math_utils", "/home/toan/dev/tools/esp/esp-idf/components/mbedtls", "/home/toan/dev/workspaces/esp/esp32_KDI/components/motors", "/home/toan/dev/tools/esp/esp-idf/components/newlib", "/home/toan/dev/tools/esp/esp-idf/components/nvs_flash", "/home/toan/dev/tools/esp/esp-idf/components/partition_table", "/home/toan/dev/tools/esp/esp-idf/components/pthread", "/home/toan/dev/workspaces/esp/esp32_KDI/components/rc_sbus", "/home/toan/dev/tools/esp/esp-idf/components/sdmmc", "/home/toan/dev/tools/esp/esp-idf/components/soc", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash", "/home/toan/dev/tools/esp/esp-idf/components/vfs", "/home/toan/dev/workspaces/esp/esp32_KDI/components/web_rc", "/home/toan/dev/workspaces/esp/esp32_KDI/components/wifi_ap", "/home/toan/dev/tools/esp/esp-idf/components/wpa_supplicant", "/home/toan/dev/tools/esp/esp-idf/components/xtensa", "" ],
+    "build_components" : [ "app_update", "attitude_estimator", "battery", "bootloader", "bootloader_support", "cxx", "driver", "drone_config", "efuse", "esp_adc", "esp_app_format", "esp_bootloader_format", "esp_coex", "esp_common", "esp_driver_ana_cmpr", "esp_driver_bitscrambler", "esp_driver_dac", "esp_driver_gpio", "esp_driver_gptimer", "esp_driver_i2c", "esp_driver_i2s", "esp_driver_ledc", "esp_driver_mcpwm", "esp_driver_parlio", "esp_driver_pcnt", "esp_driver_rmt", "esp_driver_sdio", "esp_driver_sdm", "esp_driver_sdmmc", "esp_driver_sdspi", "esp_driver_spi", "esp_driver_tsens", "esp_driver_twai", "esp_driver_uart", "esp_driver_usb_serial_jtag", "esp_event", "esp_http_server", "esp_hw_support", "esp_mm", "esp_netif", "esp_netif_stack", "esp_partition", "esp_phy", "esp_pm", "esp_psram", "esp_ringbuf", "esp_rom", "esp_security", "esp_system", "esp_timer", "esp_vfs_console", "esp_wifi", "esptool_py", "flight_control", "freertos", "hal", "heap", "http_parser", "imu", "led_ctrl", "log", "lwip", "main", "math_utils", "mbedtls", "motors", "newlib", "nvs_flash", "partition_table", "pthread", "rc_sbus", "sdmmc", "soc", "spi_flash", "tof_sensor", "vfs", "vl53l1x-st-api", "web_rc", "wifi_ap", "wpa_supplicant", "xtensa", "" ],
+    "build_component_paths" : [ "/home/toan/dev/tools/esp/esp-idf/components/app_update", "/home/toan/dev/workspaces/esp/esp32_KDI/components/attitude_estimator", "/home/toan/dev/workspaces/esp/esp32_KDI/components/battery", "/home/toan/dev/tools/esp/esp-idf/components/bootloader", "/home/toan/dev/tools/esp/esp-idf/components/bootloader_support", "/home/toan/dev/tools/esp/esp-idf/components/cxx", "/home/toan/dev/tools/esp/esp-idf/components/driver", "/home/toan/dev/workspaces/esp/esp32_KDI/components/drone_config", "/home/toan/dev/tools/esp/esp-idf/components/efuse", "/home/toan/dev/tools/esp/esp-idf/components/esp_adc", "/home/toan/dev/tools/esp/esp-idf/components/esp_app_format", "/home/toan/dev/tools/esp/esp-idf/components/esp_bootloader_format", "/home/toan/dev/tools/esp/esp-idf/components/esp_coex", "/home/toan/dev/tools/esp/esp-idf/components/esp_common", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_ana_cmpr", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_bitscrambler", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_dac", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_gpio", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_gptimer", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_i2c", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_i2s", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_ledc", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_mcpwm", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_parlio", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_pcnt", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_rmt", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_sdio", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_sdm", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_sdmmc", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_sdspi", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_spi", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_tsens", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_twai", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_uart", "/home/toan/dev/tools/esp/esp-idf/components/esp_driver_usb_serial_jtag", "/home/toan/dev/tools/esp/esp-idf/components/esp_event", "/home/toan/dev/tools/esp/esp-idf/components/esp_http_server", "/home/toan/dev/tools/esp/esp-idf/components/esp_hw_support", "/home/toan/dev/tools/esp/esp-idf/components/esp_mm", "/home/toan/dev/tools/esp/esp-idf/components/esp_netif", "/home/toan/dev/tools/esp/esp-idf/components/esp_netif_stack", "/home/toan/dev/tools/esp/esp-idf/components/esp_partition", "/home/toan/dev/tools/esp/esp-idf/components/esp_phy", "/home/toan/dev/tools/esp/esp-idf/components/esp_pm", "/home/toan/dev/tools/esp/esp-idf/components/esp_psram", "/home/toan/dev/tools/esp/esp-idf/components/esp_ringbuf", "/home/toan/dev/tools/esp/esp-idf/components/esp_rom", "/home/toan/dev/tools/esp/esp-idf/components/esp_security", "/home/toan/dev/tools/esp/esp-idf/components/esp_system", "/home/toan/dev/tools/esp/esp-idf/components/esp_timer", "/home/toan/dev/tools/esp/esp-idf/components/esp_vfs_console", "/home/toan/dev/tools/esp/esp-idf/components/esp_wifi", "/home/toan/dev/tools/esp/esp-idf/components/esptool_py", "/home/toan/dev/workspaces/esp/esp32_KDI/components/flight_control", "/home/toan/dev/tools/esp/esp-idf/components/freertos", "/home/toan/dev/tools/esp/esp-idf/components/hal", "/home/toan/dev/tools/esp/esp-idf/components/heap", "/home/toan/dev/tools/esp/esp-idf/components/http_parser", "/home/toan/dev/workspaces/esp/esp32_KDI/components/imu", "/home/toan/dev/workspaces/esp/esp32_KDI/components/led_ctrl", "/home/toan/dev/tools/esp/esp-idf/components/log", "/home/toan/dev/tools/esp/esp-idf/components/lwip", "/home/toan/dev/workspaces/esp/esp32_KDI/main", "/home/toan/dev/workspaces/esp/esp32_KDI/components/math_utils", "/home/toan/dev/tools/esp/esp-idf/components/mbedtls", "/home/toan/dev/workspaces/esp/esp32_KDI/components/motors", "/home/toan/dev/tools/esp/esp-idf/components/newlib", "/home/toan/dev/tools/esp/esp-idf/components/nvs_flash", "/home/toan/dev/tools/esp/esp-idf/components/partition_table", "/home/toan/dev/tools/esp/esp-idf/components/pthread", "/home/toan/dev/workspaces/esp/esp32_KDI/components/rc_sbus", "/home/toan/dev/tools/esp/esp-idf/components/sdmmc", "/home/toan/dev/tools/esp/esp-idf/components/soc", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash", "/home/toan/dev/workspaces/esp/esp32_KDI/components/tof_sensor", "/home/toan/dev/tools/esp/esp-idf/components/vfs", "/home/toan/dev/workspaces/esp/esp32_KDI/components/vl53l1x-st-api", "/home/toan/dev/workspaces/esp/esp32_KDI/components/web_rc", "/home/toan/dev/workspaces/esp/esp32_KDI/components/wifi_ap", "/home/toan/dev/tools/esp/esp-idf/components/wpa_supplicant", "/home/toan/dev/tools/esp/esp-idf/components/xtensa", "" ],
     "build_component_info" : {
         "app_update": {
             "alias": "idf::app_update",
@@ -830,7 +830,7 @@
             "dir": "/home/toan/dev/workspaces/esp/esp32_KDI/components/flight_control",
             "type": "LIBRARY",
             "lib": "__idf_flight_control",
-            "reqs": [ "drone_config", "math_utils", "battery", "rc_sbus" ],
+            "reqs": [ "drone_config", "math_utils", "battery", "rc_sbus", "tof_sensor" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
@@ -1138,6 +1138,21 @@
             "sources": [ "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/flash_brownout_hook.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/spi_flash_chip_drivers.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/spi_flash_chip_generic.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/spi_flash_chip_issi.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/spi_flash_chip_mxic.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/spi_flash_chip_gd.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/spi_flash_chip_winbond.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/spi_flash_chip_boya.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/spi_flash_chip_mxic_opi.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/spi_flash_chip_th.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/memspi_host_driver.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/cache_utils.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/flash_mmap.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/flash_ops.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/spi_flash_wrap.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/esp_flash_api.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/esp_flash_spi_init.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/spi_flash_os_func_app.c", "/home/toan/dev/tools/esp/esp-idf/components/spi_flash/spi_flash_os_func_noos.c" ],
             "include_dirs": [ "include" ]
         },
+        "tof_sensor": {
+            "alias": "idf::tof_sensor",
+            "target": "___idf_tof_sensor",
+            "prefix": "idf",
+            "dir": "/home/toan/dev/workspaces/esp/esp32_KDI/components/tof_sensor",
+            "type": "LIBRARY",
+            "lib": "__idf_tof_sensor",
+            "reqs": [ "vl53l1x-st-api", "driver", "freertos", "esp_timer" ],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/tof_sensor/libtof_sensor.a",
+            "sources": [ "/home/toan/dev/workspaces/esp/esp32_KDI/components/tof_sensor/tof_sensor.c" ],
+            "include_dirs": [ "include" ]
+        },
         "vfs": {
             "alias": "idf::vfs",
             "target": "___idf_vfs",
@@ -1151,6 +1166,21 @@
             "managed_priv_reqs": [],
             "file": "/home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/vfs/libvfs.a",
             "sources": [ "/home/toan/dev/tools/esp/esp-idf/components/vfs/vfs.c", "/home/toan/dev/tools/esp/esp-idf/components/vfs/vfs_eventfd.c", "/home/toan/dev/tools/esp/esp-idf/components/vfs/vfs_semihost.c", "/home/toan/dev/tools/esp/esp-idf/components/vfs/nullfs.c" ],
+            "include_dirs": [ "include" ]
+        },
+        "vl53l1x-st-api": {
+            "alias": "idf::vl53l1x-st-api",
+            "target": "___idf_vl53l1x-st-api",
+            "prefix": "idf",
+            "dir": "/home/toan/dev/workspaces/esp/esp32_KDI/components/vl53l1x-st-api",
+            "type": "LIBRARY",
+            "lib": "__idf_vl53l1x-st-api",
+            "reqs": [ "driver", "esp_timer" ],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/vl53l1x-st-api/libvl53l1x-st-api.a",
+            "sources": [ "/home/toan/dev/workspaces/esp/esp32_KDI/components/vl53l1x-st-api/vl53l1_api.c", "/home/toan/dev/workspaces/esp/esp32_KDI/components/vl53l1x-st-api/vl53l1_api_calibration.c", "/home/toan/dev/workspaces/esp/esp32_KDI/components/vl53l1x-st-api/vl53l1_api_core.c", "/home/toan/dev/workspaces/esp/esp32_KDI/components/vl53l1x-st-api/vl53l1_api_debug.c", "/home/toan/dev/workspaces/esp/esp32_KDI/components/vl53l1x-st-api/vl53l1_api_preset_modes.c", "/home/toan/dev/workspaces/esp/esp32_KDI/components/vl53l1x-st-api/vl53l1_api_strings.c", "/home/toan/dev/workspaces/esp/esp32_KDI/components/vl53l1x-st-api/vl53l1_core.c", "/home/toan/dev/workspaces/esp/esp32_KDI/components/vl53l1x-st-api/vl53l1_core_support.c", "/home/toan/dev/workspaces/esp/esp32_KDI/components/vl53l1x-st-api/vl53l1_error_strings.c", "/home/toan/dev/workspaces/esp/esp32_KDI/components/vl53l1x-st-api/vl53l1_platform.c", "/home/toan/dev/workspaces/esp/esp32_KDI/components/vl53l1x-st-api/vl53l1_register_funcs.c", "/home/toan/dev/workspaces/esp/esp32_KDI/components/vl53l1x-st-api/vl53l1_silicon_core.c", "/home/toan/dev/workspaces/esp/esp32_KDI/components/vl53l1x-st-api/vl53l1_wait.c" ],
             "include_dirs": [ "include" ]
         },
         "web_rc": {
@@ -2577,7 +2607,7 @@
             "prefix": "idf",
             "dir": "/home/toan/dev/workspaces/esp/esp32_KDI/components/flight_control",
             "lib": "__idf_flight_control",
-            "reqs": [ "drone_config", "math_utils", "battery", "rc_sbus" ],
+            "reqs": [ "drone_config", "math_utils", "battery", "rc_sbus", "tof_sensor" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
@@ -2638,6 +2668,18 @@
             "dir": "/home/toan/dev/workspaces/esp/esp32_KDI/components/rc_sbus",
             "lib": "__idf_rc_sbus",
             "reqs": [ "drone_config", "math_utils", "driver" ],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "include_dirs": [ "include" ]
+        },
+        "tof_sensor": {
+            "alias": "idf::tof_sensor",
+            "target": "___idf_tof_sensor",
+            "prefix": "idf",
+            "dir": "/home/toan/dev/workspaces/esp/esp32_KDI/components/tof_sensor",
+            "lib": "__idf_tof_sensor",
+            "reqs": [ "vl53l1x-st-api", "driver", "freertos", "esp_timer" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],

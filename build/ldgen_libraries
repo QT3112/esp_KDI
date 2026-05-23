@@ -117,8 +117,12 @@
 /home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/attitude_estimator/libattitude_estimator.a
 /home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/imu/libimu.a
 /home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/motors/libmotors.a
+/home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/vl53l1x-st-api/libvl53l1x-st-api.a
+/home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/tof_sensor/libtof_sensor.a
+/home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/vl53l1x-st-api/libvl53l1x-st-api.a
 /home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/flight_control/libflight_control.a
 /home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/rc_sbus/librc_sbus.a
+/home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/tof_sensor/libtof_sensor.a
 /home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/esp_event/libesp_event.a
 /home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/nvs_flash/libnvs_flash.a
 /home/toan/dev/workspaces/esp/esp32_KDI/build/esp-idf/esp_phy/libesp_phy.a
